@@ -13,7 +13,7 @@ Merge sort is a divide-and-conquer algorithm that works by recursively dividing 
 
 ## Time Complexity:
 
-The time complexity is as follows: $$O(N \log_2 N)$$
+The time complexity is as follows: \O(N \log_2 N\)
 
 ## Space Complexity:
 
