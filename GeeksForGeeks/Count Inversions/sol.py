@@ -21,28 +21,33 @@ class Solution:
     def merge(self, arr, low, m, high, count):
 
         i = low
-        j = high
+        j = m + 1
         temp = []
 
-        while i <= m and j > m:
+        while i <= m and j <= high:
 
-            if (i <= m and j > m and arr[i] <= arr[j]):
-                temp.add(arr[i])
+            if (i <= m and j <= high and arr[i] <= arr[j]):
+                temp.append(arr[i])
                 i += 1
 
-            if (i <= m and j > m and arr[i] > arr[j]):
-                temp.add(arr[j])
-                j -= 1
+            if (i <= m and j <= high and arr[i] > arr[j]):
+                temp.append(arr[j])
+                j += 1
                 count[0] += 1 + (m - i)
 
         while (i <= m):
-            temp.add(arr[i])
+            temp.append(arr[i])
             i += 1
 
-        while (j > m):
-            temp.add(arr[j])
-            j -= 1
+        while (j <= high):
+            temp.append(arr[j])
+            j += 1
 
-        for y in range(low, high):
+        for y in range(low, high + 1):
             arr[y] = temp[y - low]
+
+
+# {
+# Driver Code Starts
+# Initial Template for Python 3
 
